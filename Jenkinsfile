@@ -11,13 +11,13 @@ pipeline{
         }
         stage("Build"){
             steps{
-                sh "docker build -t simple-java-docker:latest ."
+                sh "docker build -t simple-app ."
                 sh "docker ps"
             }
         }
         stage("Deploy"){
             steps{
-                sh "docker run simple-java-docker:latest"
+                sh "docker run simple-app"
             }
         }
     }
